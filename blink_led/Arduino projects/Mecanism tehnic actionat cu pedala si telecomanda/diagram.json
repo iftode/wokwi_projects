@@ -1,0 +1,46 @@
+{
+  "version": 1,
+  "author": "Iftode Iulian-Cezar",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 0, "left": 0, "attrs": {} },
+    { "type": "wokwi-servo", "id": "servo1", "top": 199.6, "left": -153.6, "attrs": {} },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn1",
+      "top": -118.6,
+      "left": 432,
+      "attrs": { "color": "green", "xray": "1" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": -90,
+      "left": -15.4,
+      "attrs": { "color": "green" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": -120.85,
+      "left": -28.8,
+      "attrs": { "value": "220" }
+    },
+    { "type": "wokwi-ir-remote", "id": "remote1", "top": -249.6, "left": -240, "attrs": {} },
+    { "type": "wokwi-ir-receiver", "id": "ir1", "top": 56.25, "left": 391.82, "attrs": {} }
+  ],
+  "connections": [
+    [ "btn1:2.l", "uno:2", "green", [ "h0" ] ],
+    [ "uno:GND.1", "btn1:1.r", "violet", [ "v0" ] ],
+    [ "servo1:V+", "uno:5V", "blue", [ "h0" ] ],
+    [ "uno:GND.2", "servo1:GND", "#8f4814", [ "v0" ] ],
+    [ "servo1:PWM", "uno:9", "orange", [ "h0" ] ],
+    [ "r1:1", "uno:GND.3", "cyan", [ "v0" ] ],
+    [ "led1:C", "r1:2", "green", [ "v0" ] ],
+    [ "led1:A", "uno:8", "green", [ "v0" ] ],
+    [ "ir1:VCC", "uno:5V", "red", [ "v0" ] ],
+    [ "ir1:GND", "uno:GND.3", "black", [ "v48", "h-230.4" ] ],
+    [ "ir1:DAT", "uno:3", "purple", [ "v0" ] ]
+  ],
+  "dependencies": {}
+}
